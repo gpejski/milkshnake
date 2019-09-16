@@ -41,15 +41,7 @@ def start():
     """
     print(json.dumps(data))
 
-<<<<<<< HEAD
-    # color = "#00FF00"
-=======
-    
-    color: "#ff00ff"
->>>>>>> 1cfd0cbab42f4e38a05258f7e3d99026b5292688
-
     return start_response({'color': '#00FF00','head':'','tail':''})
-
 
 @bottle.post('/move')
 def move():
