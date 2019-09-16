@@ -41,7 +41,8 @@ def start():
     """
     print(json.dumps(data))
 
-    return start_response({'color': '#00FF00','head':'','tail':''})
+    return start_response({'color': '#FF0000','head':'bendr','tail':'bolt'})
+
 
 @bottle.post('/move')
 def move():
@@ -62,7 +63,7 @@ def move():
     snake_x = snakeData['you']['body'][0]['x']
     snake_y = snakeData['you']['body'][0]['y']
     
-    possible_direction = ['up', 'down', 'left', 'right']
+    possible_direction = ['down', 'left', 'up' 'right']
 
     if(snake_x == 0):
         possible_direction.remove('left')
