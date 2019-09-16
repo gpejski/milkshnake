@@ -41,9 +41,7 @@ def start():
     """
     print(json.dumps(data))
 
-    color = "#00FF00"
-
-    return start_response(color)
+    return start_response({'color': '#FF0000','head':'bendr','tail':'bolt'})
 
 
 @bottle.post('/move')
@@ -56,9 +54,29 @@ def move():
     """
     print(json.dumps(data))
 
-    directions = ['up', 'down', 'left', 'right']
-    direction = random.choice(directions)
+    snakeDataJson = json.dumps(x)
+    snakeData = json.loads(snakeDataJson)
 
+    board_x = snakeData['board']['width'] - 1 
+    board_y = snakeData['board']['height'] - 1
+
+    snake_x = snakeData['you']['body'][0]['x']
+    snake_y = snakeData['you']['body'][0]['y']
+    
+    possible_direction = ['down', 'left', 'up' 'right']
+
+    if(snake_x == 0):
+        possible_direction.remove('left')
+    if (snake_x == board_x):
+        possible_direction.remove('right')
+    if (snake_y == 0):
+        possible_direction.remove('up')
+    if (snake_y == board_y):
+        possible_direction.remove('left')
+   
+    
+    direction = random.choice(possible_directions)
+    
     return move_response(direction)
 
 
