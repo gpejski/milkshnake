@@ -41,7 +41,9 @@ def start():
     """
     print(json.dumps(data))
 
-    color = "#00FF00"
+    color: "#ff00ff",
+    headType: "bendr",
+    tailType: "pixel"
 
     return start_response(color)
 
