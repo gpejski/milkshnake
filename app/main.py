@@ -76,7 +76,15 @@ def move():
    
     
     direction = random.choice(possible_directions)
-
+    
+      vectors_directions = {
+       'n': [2,0]
+       's': [1,1]
+       'w': [3,1]
+       'e': [3,2]
+   }
+    if snake_x in vectors_directions: break
+        
     return move_response(direction)
 
 
