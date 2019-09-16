@@ -46,7 +46,7 @@ def start():
     headType: "bendr",
     tailType: "pixel"
 
-    return start_response(color)
+    return start_response(color, headType, tailType)
 
 
 @bottle.post('/move')
